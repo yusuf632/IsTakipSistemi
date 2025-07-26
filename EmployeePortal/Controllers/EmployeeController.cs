@@ -149,7 +149,7 @@ namespace EmployeePortal.Controllers
             return View(employee);
         }
 
-        [HttpPost, ActionName("Sil")]
+        [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var employee = await _employeeService.GetEmployeeByIdAsync(id);
