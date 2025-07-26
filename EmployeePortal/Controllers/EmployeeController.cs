@@ -130,7 +130,7 @@ namespace EmployeePortal.Controllers
 
                 await _employeeService.UpdateEmployeeAsync(employee);
                 TempData["Mesaj"] = $"Kimliği {employee.Id} ve adı {employee.FullName} olan kişi güncellendi.";
-                return RedirectToAction("Liste");
+                return RedirectToAction("List");
             }
 
             vm.Departments = await _employeeService.GetDepartmentsAsync();
@@ -157,7 +157,7 @@ namespace EmployeePortal.Controllers
 
             await _employeeService.DeleteEmployeeAsync(id);
             TempData["Mesaj"] = $"Kimliği {id} ve adı {employee.FullName} olan kişi silindi.";
-            return RedirectToAction("Liste");
+            return RedirectToAction("List");
         }
 
         [HttpGet]
