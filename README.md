@@ -1,1 +1,1 @@
-# EmployeePortal
+IS TAKIP SISTEMI - WEB (ASP.NET CORE MVC)
