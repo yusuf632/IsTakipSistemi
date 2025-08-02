@@ -24,7 +24,7 @@ Diğer Araçlar: Entity Framework Core
 
 - Rol bazlı erişim (Admin, Yönetici, Kullanıcı)
 
-✅ Proje & Görev Yönetimi
+✅ Görev Yönetimi
 
 - Görev atama
 
