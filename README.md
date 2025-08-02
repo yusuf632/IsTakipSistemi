@@ -16,7 +16,7 @@ Frontend: Razor Pages, HTML5, CSS3, Bootstrap
 
 Veritabanı: SQL Server 
 
-Diğer Araçlar: Entity Framework Core,
+Diğer Araçlar: Entity Framework Core
 
 🎯 Temel Özellikler
 
