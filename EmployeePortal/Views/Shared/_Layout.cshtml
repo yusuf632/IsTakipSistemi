@@ -14,6 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1e3a8a;">
             <div class="container-fluid">
+                <i class="bi bi-person-workspace fs-1 text-white mx-3"></i>
                 <a class="navbar-brand d-flex align-items-center fw-bold fs-4" asp-area="" asp-controller="Home" asp-action="Index" style="letter-spacing: 0.05em;">
                     İş Takip Sistemi
                 </a>
@@ -23,7 +24,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
                         <li class="nav-item">
                             <a class="nav-link px-3 @((ViewContext.RouteData.Values["controller"]?.ToString() == "Employee" && ViewContext.RouteData.Values["action"]?.ToString() == "List") ? "active" : "")"
                                asp-area="" asp-controller="Employee" asp-action="List">Çalışan Listesi</a>
@@ -36,14 +36,15 @@
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="user-select:none;">
-                                <img src="#" alt="User Avatar" class="rounded-circle me-2" style="width:36px; height:36px; object-fit:cover; border: 2px solid #fff; box-shadow: 0 0 6px rgba(0,0,0,0.3);" />
+                                <img src="/img/student.png" alt="User Avatar" class="rounded-circle me-2" style="width:36px; height:36px; object-fit:cover; border: 2px solid #fff; box-shadow: 0 0 6px rgba(0,0,0,0.3);" />
                                 <span class="d-none d-lg-inline text-white fw-semibold">Yönetici</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown" style="min-width: 180px;">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Profile">Profil</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Settings">Ayarlar</a></li>
+                                
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Profile"><i class="bi bi-person-fill mx-2"></i>Profil</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Settings"><i class="bi bi-gear mx-2"></i>Ayarlar</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item text-danger" asp-area="" asp-controller="Account" asp-action="Logout">Çıkış Yap</a></li>
+                                <li><a class="dropdown-item text-danger" asp-area="" asp-controller="Account" asp-action="Logout"><i class="bi bi-box-arrow-right mx-2"></i>Çıkış Yap</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -56,7 +57,7 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="bg-dark text-light pt-5 pb-4 mt-auto">
+    <footer class="bg-dark text-light pt-5 pb-5">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <!-- Ortalama ekledik -->

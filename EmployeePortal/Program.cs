@@ -28,7 +28,7 @@ namespace EmployeePortal
             app.UseAuthorization();
             app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Employee}/{action=List}/{id?}");
+            pattern: "{controller=Home}/{action=Index}/{id?}");
             app.Run();
         }
     }

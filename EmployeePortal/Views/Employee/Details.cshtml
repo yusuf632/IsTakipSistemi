@@ -17,7 +17,7 @@
                         <table class="table table-borderless mb-0">
                             <tbody>
                                 <tr>
-                                    <th class="text-muted" style="width: 30%;">📧 Email</th>
+                                    <th class="text-muted" style="width: 30%;"><i class="bi bi-envelope-at-fill text-black mx-2"></i> Email</th>
                                     <td>
                                         <a href="mailto:@Model.Email" class="text-decoration-none fw-semibold text-primary">
                                             @Model.Email
@@ -25,31 +25,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th class="text-muted">💼 Tanımlama</th>
+                                    <th class="text-muted"><i class="bi bi-briefcase-fill text-black mx-2"></i> Tanımlama</th>
                                     <td class="fw-semibold">@Model.Designation?.Name</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-muted">🏢 Departman</th>
+                                    <th class="text-muted"><i class="bi bi-pc-display-horizontal text-black mx-2"></i> Departman</th>
                                     <td class="fw-semibold">@Model.Department?.Name</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-muted">🗓️ İşe alım tarihi</th>
+                                    <th class="text-muted"><i class="bi bi-calendar-fill text-black mx-2"></i> İşe alım tarihi</th>
                                     <td class="fw-semibold">@Model.HireDate.ToString("MMMM dd, yyyy")</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-muted">🎂 Doğum tarihi</th>
+                                    <th class="text-muted"><i class="bi bi-calendar-fill text-black mx-2"></i> Doğum tarihi</th>
                                     <td class="fw-semibold">@Model.DateOfBirth.ToString("MMMM dd, yyyy")</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-muted">👔 Çalışan tipi</th>
+                                    <th class="text-muted"><i class="bi bi-building-fill text-black mx-2"></i> Çalışan tipi</th>
                                     <td class="fw-semibold">@Model.EmployeeType?.Name</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-muted">⚧ Cinsiyet</th>
+                                    <th class="text-muted"><i class="bi bi-gender-trans text-black mx-2"></i> Cinsiyet</th>
                                     <td class="fw-semibold">@Model.Gender</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-muted">💰 Maaş</th>
+                                    <th class="text-muted"><i class="bi bi-cash-stack text-black mx-2"></i> Maaş</th>
                                     <td class="fw-semibold">$@Model.Salary.ToString("N2")</td>
                                 </tr>
                             </tbody>

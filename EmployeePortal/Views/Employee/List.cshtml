@@ -1,7 +1,7 @@
 ﻿@model EmployeePortal.ViewModels.EmployeeListViewModel
 @{
     ViewData["Title"] = "Çalışan listesi";
-    var pageSizeOptions = new List<int> { 3, 5, 10, 15, 20 };
+    var pageSizeOptions = new List<int> { 3, 4, 5, 6, 7 };
 }
 <div class="container mt-1">
     <div class="row">
@@ -22,35 +22,35 @@
             <!-- Filter Section -->
             <div class="card mb-4 shadow-sm">
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">🔍 Çalışanları filtrele</h5>
-                    <span class="badge bg-light text-dark">Toplam çalışan: @Model.Total 📝</span>
+                    <h5 class="mb-0"><i class="bi bi-search"></i> Çalışanları filtrele</h5>
+                    <span class="badge bg-light text-dark">Toplam çalışan: @Model.Total <i class="bi bi-file-earmark-fill text-black"></i></span>
                 </div>
                 <div class="card-body">
                     <form method="get" asp-controller="Employee" asp-action="List" class="row g-3">
                         <div class="col-md-3">
-                            <label asp-for="SearchTerm" class="form-label">🔍 İsim ara</label>
+                            <label asp-for="SearchTerm" class="form-label"><i class="bi bi-search text-black mx-2"></i> İsim ara</label>
                             <input asp-for="SearchTerm" class="form-control" placeholder="İsim girin..." />
                         </div>
                         <div class="col-md-3">
-                            <label asp-for="SelectedDepartmentId" class="form-label">🖥️ Departman</label>
+                            <label asp-for="SelectedDepartmentId" class="form-label"><i class="bi bi-pc-display-horizontal text-black mx-2"></i> Departman</label>
                             <select asp-for="SelectedDepartmentId" asp-items="@(new SelectList(Model.Departments, "Id", "Name"))" class="form-control">
                                 <option value="">Tüm departmanlar</option>
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label asp-for="SelectedEmployeeTypeId" class="form-label">📅 Çalışan tipi</label>
+                            <label asp-for="SelectedEmployeeTypeId" class="form-label"><i class="bi bi-building-fill text-black mx-2"></i> Çalışan tipi</label>
                             <select asp-for="SelectedEmployeeTypeId" asp-items="@(new SelectList(Model.EmployeeTypes, "Id", "Name"))" class="form-control">
                                 <option value="">Tüm çalışan tipi</option>
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <label asp-for="PageSize" class="form-label">📄 Sayfa</label>
+                            <label asp-for="PageSize" class="form-label"><i class="bi bi-file-earmark-fill text-black mx-2"></i> Sayfa</label>
                             <select asp-for="PageSize" asp-items="@(new SelectList(pageSizeOptions))" class="form-control" onchange="this.form.submit();">
                                 <option value="">Seçiniz</option>
                             </select>
                         </div>
                         <div class="col-md-1 d-flex align-items-end">
-                            <button type="submit" class="btn btn-success w-100">Ara</button>
+                            <button type="submit" class="btn btn-success w-100"><i class="bi bi-search text-white mx-2"></i> Ara</button>
                         </div>
                     </form>
                 </div>
@@ -60,13 +60,13 @@
                     <table class="table table-hover table-striped mb-0">
                         <thead class="bg-primary text-white">
                             <tr>
-                                <th>👤 İsim</th>
-                                <th>📩 Email</th>
-                                <th>💼 Tanımlama</th>
-                                <th>🖥️ Departman</th>
-                                <th>⚧ Cinsiyet</th>
-                                <th>📅 Çalışan tipi</th>
-                                <th class="text-center">⚙️ Seçenekler</th>
+                                <th><i class="bi bi-person-fill text-black mx-2"></i> İsim</th>
+                                <th><i class="bi bi-envelope-at-fill text-black mx-2"></i> Email</th>
+                                <th><i class="bi bi-briefcase-fill text-black mx-2"></i> Tanımlama</th>
+                                <th><i class="bi bi-pc-display-horizontal text-black mx-2"></i> Departman</th>
+                                <th><i class="bi bi-gender-trans text-black mx-2"></i> Cinsiyet</th>
+                                <th><i class="bi bi-building-fill text-black mx-2"></i> Çalışan tipi</th>
+                                <th class="text-center"><i class="bi bi-gear mx-2"></i> Seçenekler</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -110,24 +110,24 @@
                 <ul class="pagination justify-content-center mb-0">
                     @if (Model.PageNumber == 1)
                     {
-                        <li class="page-item disabled"><span class="page-link">İlk sayfa ⏮️</span></li>
-                        <li class="page-item disabled"><span class="page-link">Önceki ⬅️</span></li>
+                        <li class="page-item disabled"><span class="page-link">İlk sayfa <i class="bi bi-skip-backward-fill text-black"></i></span></li>
+                        <li class="page-item disabled"><span class="page-link">Önceki <i class="bi bi-arrow-left-circle text-black"></i></span></li>
                     }
                     else
                     {
-                        <li class="page-item"><a class="page-link" href="@Url.Action("List", "Employee", GetRouteValuesForPage(1))">İlk sayfa ⏮️</a></li>
-                        <li class="page-item"><a class="page-link" href="@Url.Action("List", "Employee", GetRouteValuesForPage(Model.PageNumber - 1))">Önceki ⬅️</a></li>
+                        <li class="page-item"><a class="page-link" href="@Url.Action("List", "Employee", GetRouteValuesForPage(1))">İlk sayfa <i class="bi bi-skip-backward-fill text-black"></i></a></li>
+                        <li class="page-item"><a class="page-link" href="@Url.Action("List", "Employee", GetRouteValuesForPage(Model.PageNumber - 1))">Önceki <i class="bi bi-arrow-left-circle text-black"></i></a></li>
                     }
                     <li class="page-item active"><span class="page-link">@Model.PageNumber</span></li>
                     @if (Model.PageNumber == Model.TotalPages)
                     {
-                        <li class="page-item disabled"><span class="page-link">Sonraki sayfa ➡️</span></li>
-                        <li class="page-item disabled"><span class="page-link">Son sayfa ⏭️</span></li>
+                        <li class="page-item disabled"><span class="page-link"><i class="bi bi-arrow-right-circle text-black"></i> Sonraki</span></li>
+                        <li class="page-item disabled"><span class="page-link"><i class="bi bi-skip-forward-fill text-black"></i> Son sayfa</span></li>
                     }
                     else
                     {
-                        <li class="page-item"><a class="page-link" href="@Url.Action("List", "Employee", GetRouteValuesForPage(Model.PageNumber + 1))">Sonraki ➡️</a></li>
-                        <li class="page-item"><a class="page-link" href="@Url.Action("List", "Employee", GetRouteValuesForPage(Model.TotalPages))">Son sayfa ⏭️</a></li>
+                        <li class="page-item"><a class="page-link" href="@Url.Action("List", "Employee", GetRouteValuesForPage(Model.PageNumber + 1))"><i class="bi bi-arrow-right-circle text-black"></i>  Sonraki</a></li>
+                        <li class="page-item"><a class="page-link" href="@Url.Action("List", "Employee", GetRouteValuesForPage(Model.TotalPages))"><i class="bi bi-skip-forward-fill text-black"></i> Son sayfa</a></li>
                     }
                 </ul>
             </nav>
